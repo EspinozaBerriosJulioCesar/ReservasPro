@@ -12,6 +12,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/reservas")
 public class ReservaController {
@@ -64,5 +66,11 @@ public class ReservaController {
         Reserva guardada = reservaRepository.save(reserva);
 
         return ResponseEntity.status(HttpStatus.CREATED).body(guardada);
+    }
+
+    @GetMapping
+    public ResponseEntity<List<Reserva>> consultarReservas() {
+        List<Reserva> reservas = reservaRepository.findAll();
+        return ResponseEntity.ok(reservas);
     }
 }
