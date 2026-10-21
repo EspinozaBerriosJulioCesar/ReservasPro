@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservasPro | Clientes</title>
+
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/clientes.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <h1>ReservasPro</h1>
+            <p>Gestión de clientes</p>
+        </div>
+
+        <a class="boton" href="../frontend/index.html">
+            Volver al inicio
+        </a>
+    </header>
+
+    <main class="contenedor">
+
+        <section class="panel">
+            <h2 id="tituloFormulario">Registrar cliente</h2>
+
+            <form id="formCliente">
+                <label for="nombre">Nombre completo</label>
+                <input
+                    id="nombre"
+                    name="nombre"
+                    type="text"
+                    maxlength="100"
+                    required
+                >
+
+                <label for="correo">Correo electrónico</label>
+                <input
+                    id="correo"
+                    name="correo"
+                    type="email"
+                    maxlength="120"
+                    required
+                >
+
+                <label for="telefono">Teléfono</label>
+                <input
+                    id="telefono"
+                    name="telefono"
+                    type="tel"
+                    maxlength="20"
+                    required
+                >
+
+                <div class="acciones-formulario">
+                    <button id="btnGuardar" type="submit">
+                        Registrar cliente
+                    </button>
+
+                    <button id="btnCancelar" type="button" hidden>
+                        Cancelar edición
+                    </button>
+                </div>
+            </form>
+
+            <p id="mensaje" class="mensaje" role="status"
+               aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="encabezado-tabla">
+                <h2>Clientes registrados</h2>
+
+                <button id="btnActualizar" type="button">
+                    Actualizar lista
+                </button>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Correo</th>
+                            <th>Teléfono</th>
+                            <th>Reservas asociadas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="tablaClientes">
+                        <tr>
+                            <td colspan="6">Cargando clientes...</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="clientes.js"></script>
+</body>
+</html>

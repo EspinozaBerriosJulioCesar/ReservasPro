@@ -1,0 +1,116 @@
+#formCliente {
+    display: grid;
+    gap: 10px;
+}
+
+#formCliente input {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font: inherit;
+    box-sizing: border-box;
+}
+
+#formCliente input:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+.acciones-formulario,
+.acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.acciones-formulario {
+    margin-top: 8px;
+}
+
+.acciones button,
+.acciones-formulario button,
+.encabezado-tabla button {
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.acciones .eliminar {
+    background: #dc2626;
+    color: white;
+}
+
+.acciones .eliminar:disabled {
+    background: #9ca3af;
+    cursor: not-allowed;
+}
+
+.encabezado-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.tabla-contenedor {
+    overflow-x: auto;
+}
+
+.tabla-contenedor table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.tabla-contenedor th,
+.tabla-contenedor td {
+    padding: 12px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: left;
+}
+
+.estado-reservas {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    white-space: nowrap;
+}
+
+.estado-reservas.sin-reservas {
+    color: #166534;
+    background: #dcfce7;
+}
+
+.estado-reservas.con-reservas {
+    color: #92400e;
+    background: #fef3c7;
+}
+
+.estado-reservas.error-reservas {
+    color: #991b1b;
+    background: #fee2e2;
+}
+
+.mensaje {
+    margin-top: 12px;
+}
+
+.mensaje.exito {
+    color: #15803d;
+}
+
+.mensaje.error {
+    color: #b91c1c;
+}
+
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+[hidden] {
+    display: none !important;
+}
