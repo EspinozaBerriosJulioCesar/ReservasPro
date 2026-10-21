@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservasPro | Reservas</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/reservas.css">
+    <script src="reservas.js" defer></script>
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <h1>Gestión de reservas</h1>
+            <p>Administración de citas y servicios</p>
+        </div>
+        <a class="boton" href="../frontend/index.html">Volver al inicio</a>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel">
+            <h2 id="tituloFormulario">Registrar una reserva</h2>
+
+            <form id="formReserva">
+                <label for="clienteId">Cliente</label>
+                <select id="clienteId" required>
+                    <option value="">Selecciona un cliente</option>
+                </select>
+
+                <label for="servicioId">Servicio</label>
+                <select id="servicioId" required>
+                    <option value="">Selecciona un servicio</option>
+                </select>
+
+                <label for="fechaReserva">Fecha y hora</label>
+                <input type="datetime-local" id="fechaReserva" required>
+
+                <label for="estado">Estado</label>
+                <select id="estado" required>
+                    <option value="PENDIENTE">Pendiente</option>
+                    <option value="CONFIRMADA">Confirmada</option>
+                    <option value="CANCELADA">Cancelada</option>
+                </select>
+
+                <button type="submit" id="btnGuardar">Registrar reserva</button>
+                <button type="button" id="btnCancelarEdicion" class="secundario" hidden>
+                    Cancelar edición
+                </button>
+                <p id="mensaje" class="mensaje" role="status"></p>
+            </form>
+        </section>
+
+        <section class="panel">
+            <div class="barra-titulo">
+                <h2>Reservas registradas</h2>
+                <button type="button" id="btnActualizar" class="secundario">
+                    Actualizar
+                </button>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cliente</th>
+                            <th>Servicio</th>
+                            <th>Fecha</th>
+                            <th>Estado</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaReservas">
+                        <tr><td colspan="6">Cargando reservas...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

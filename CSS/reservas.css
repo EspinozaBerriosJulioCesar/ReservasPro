@@ -1,0 +1,30 @@
+#formReserva {
+    margin-bottom: 10px;
+}
+
+#formReserva button {
+    margin-top: 4px;
+}
+
+#tablaReservas th:first-child,
+#tablaReservas td:first-child {
+    width: 55px;
+}
+
+#tablaReservas td:nth-child(5) {
+    font-weight: 600;
+}
+
+#mensaje {
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 650px) {
+    #formReserva {
+        max-width: 100%;
+    }
+
+    #tablaReservas {
+        min-width: 700px;
+    }
+}
