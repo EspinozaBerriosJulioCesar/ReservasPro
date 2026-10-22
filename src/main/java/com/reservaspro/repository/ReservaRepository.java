@@ -8,4 +8,6 @@ public interface ReservaRepository extends JpaRepository<Reserva, Long> {
     boolean existsByCliente_Id(Long clienteId);
 
     long countByCliente_Id(Long clienteId);
+
+    boolean existsByServicio_Id(Long servicioId);
 }
