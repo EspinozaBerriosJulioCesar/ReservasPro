@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ReservasPro | Servicios</title>
+    <link rel="stylesheet" href="../CSS/global.css">
+    <link rel="stylesheet" href="../CSS/servicios.css">
+</head>
+<body>
+    <header class="encabezado">
+        <div>
+            <h1>ReservasPro</h1>
+            <p>Gestión de servicios</p>
+        </div>
+        <a class="boton" href="../frontend/index.html">Volver al inicio</a>
+    </header>
+
+    <main class="contenedor">
+        <section class="panel">
+            <h2 id="tituloFormulario">Registrar servicio</h2>
+
+            <form id="formServicio">
+                <label for="nombre">Nombre del servicio</label>
+                <input id="nombre" type="text" maxlength="100" required>
+
+                <label for="descripcion">Descripción</label>
+                <textarea id="descripcion" maxlength="500" rows="3"></textarea>
+
+                <label for="precio">Precio</label>
+                <input id="precio" type="number" min="0" step="0.01" required>
+
+                <div class="acciones-formulario">
+                    <button id="btnGuardar" type="submit">Registrar servicio</button>
+                    <button id="btnCancelar" type="button" hidden>Cancelar edición</button>
+                </div>
+            </form>
+
+            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="panel">
+            <div class="encabezado-tabla">
+                <h2>Servicios registrados</h2>
+                <button id="btnActualizar" type="button">Actualizar lista</button>
+            </div>
+
+            <div class="tabla-contenedor">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nombre</th>
+                            <th>Descripción</th>
+                            <th>Precio</th>
+                            <th>Reservas asociadas</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaServicios">
+                        <tr><td colspan="6">Cargando servicios...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="servicios.js"></script>
+</body>
+</html>

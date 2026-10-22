@@ -2,6 +2,7 @@ package com.reservaspro.controller;
 
 import com.reservaspro.model.Servicio;
 import com.reservaspro.repository.ServicioRepository;
+import com.reservaspro.repository.ReservaRepository;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -14,9 +15,13 @@ import java.util.List;
 public class ServicioController {
 
     private final ServicioRepository servicioRepository;
+    private final ReservaRepository reservaRepository;
 
-    public ServicioController(ServicioRepository servicioRepository) {
+    public ServicioController(
+            ServicioRepository servicioRepository,
+            ReservaRepository reservaRepository) {
         this.servicioRepository = servicioRepository;
+        this.reservaRepository = reservaRepository;
     }
 
     @PostMapping
@@ -31,5 +36,43 @@ public class ServicioController {
     @GetMapping
     public List<Servicio> listarServicios() {
         return servicioRepository.findAll();
+    }
+
+    @PutMapping("/{id}")
+    public ResponseEntity<?> modificarServicio(
+            @PathVariable Long id,
+            @Valid @RequestBody Servicio datosServicio) {
+
+        return servicioRepository.findById(id)
+                .map(servicioExistente -> {
+                    servicioExistente.setNombre(datosServicio.getNombre());
+                    servicioExistente.setDescripcion(datosServicio.getDescripcion());
+                    servicioExistente.setPrecio(datosServicio.getPrecio());
+
+                    Servicio actualizado =
+                            servicioRepository.save(servicioExistente);
+
+                    return ResponseEntity.ok(actualizado);
+                })
+                .orElseGet(() -> ResponseEntity.notFound().build());
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> eliminarServicio(@PathVariable Long id) {
+
+        var servicio = servicioRepository.findById(id);
+
+        if (servicio.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        if (reservaRepository.existsByServicio_Id(id)) {
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body("No se puede eliminar este servicio porque tiene reservas asociadas.");
+        }
+
+        servicioRepository.delete(servicio.get());
+
+        return ResponseEntity.noContent().build();
     }
 }
