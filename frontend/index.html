@@ -3,49 +3,421 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservasPro | Inicio</title>
+    <meta name="theme-color" content="#172957">
+
+    <title>INNOVASUN | Panel de gestión</title>
+
     <link rel="stylesheet" href="../CSS/global.css">
 </head>
-<body>
-    <header class="encabezado">
-        <div>
-            <h1>ReservasPro</h1>
-            <p>Sistema de gestión de reservas</p>
+
+<body class="pagina-dashboard">
+<div class="dashboard-layout">
+
+    <!-- BARRA LATERAL -->
+    <aside class="menu-lateral">
+
+        <a class="marca" href="index.html">
+            <div class="marca-logo">I</div>
+            <div class="marca-texto">
+                <strong>INNOVASUN</strong>
+                <span>HOTEL &amp; RESORT</span>
+            </div>
+        </a>
+
+        <div class="menu-etiqueta">MENÚ PRINCIPAL</div>
+
+        <nav class="navegacion" aria-label="Menú principal">
+
+            <a class="nav-enlace activo" href="index.html">
+                <span class="nav-icono">⌂</span>
+                <span>Panel principal</span>
+            </a>
+
+            <a class="nav-enlace" href="../reservas/reservas.html">
+                <span class="nav-icono">▦</span>
+                <span>Reservas</span>
+            </a>
+
+            <a class="nav-enlace" href="../clientes/clientes.html">
+                <span class="nav-icono">♙</span>
+                <span>Clientes</span>
+            </a>
+
+            <a class="nav-enlace" href="../servicios/servicios.html">
+                <span class="nav-icono">✧</span>
+                <span>Servicios</span>
+            </a>
+
+        </nav>
+
+        <div class="menu-separador"></div>
+
+        <div class="menu-etiqueta">FUTURAS MEJORAS</div>
+
+        <nav class="navegacion" aria-label="Funcionalidades futuras">
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▤</span>
+                <span>Reportes</span>
+                <span class="nav-tag">Próximo</span>
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">♧</span>
+                <span>Recordatorios</span>
+                <span class="nav-tag">Próximo</span>
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▣</span>
+                <span>Pagos en línea</span>
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">◷</span>
+                <span>Historial de clientes</span>
+            </span>
+
+        </nav>
+
+        <div class="menu-pie">
+            <div class="indicador-conexion"></div>
+
+            <div>
+                <strong>Gestión centralizada</strong>
+                <span>Versión inicial del sistema</span>
+            </div>
         </div>
-        <span class="estado">Panel principal</span>
-    </header>
 
-    <main class="contenedor">
-        <section class="panel">
-            <h2>Bienvenido a ReservasPro</h2>
-            <p>Selecciona el módulo que deseas gestionar.</p>
+    </aside>
 
-            <div class="tarjetas">
-                <article class="tarjeta">
-                    <h2>Reservas</h2>
-                    <p>Registra, consulta, modifica y elimina reservas.</p>
-                    <a class="boton" href="../reservas/reservas.html">
-                        Abrir reservas
+    
+    <main class="dashboard-contenido">
+
+        
+        <header class="dashboard-header">
+
+            <div>
+                <p class="texto-superior">INNOVASUN / INICIO</p>
+                <h1>Panel de gestión</h1>
+
+                <p class="subtitulo-header">
+                    Bienvenido al sistema de gestión de reservas.
+                </p>
+            </div>
+
+            <div class="header-derecha">
+                <span class="perfil-avatar">A</span>
+
+                <div class="perfil-info">
+                    <strong>Administrador</strong>
+                    <span>Panel de administración</span>
+                </div>
+            </div>
+
+        </header>
+
+        
+        <section class="bienvenida">
+
+            <div>
+                <span class="etiqueta-seccion">PANEL PRINCIPAL</span>
+
+                <h2>Todo bajo control.</h2>
+
+                <p>
+                    Administra tus clientes, servicios y reservas
+                    desde un solo lugar.
+                </p>
+            </div>
+
+            <div class="bienvenida-icono" aria-hidden="true">
+                ✦
+            </div>
+
+        </section>
+
+        
+        <section class="seccion-dashboard">
+
+            <div class="titulo-seccion">
+                <div>
+                    <h2>Resumen del sistema</h2>
+                    <p>Accede a los módulos principales de gestión.</p>
+                </div>
+
+                <span class="estado-version">
+                    3 módulos disponibles
+                </span>
+            </div>
+
+            <div class="indicadores-grid">
+
+                
+                <article class="indicador-card">
+
+                    <div class="indicador-cabecera">
+                        <span class="indicador-icono icono-azul">▦</span>
+                        <span class="indicador-etiqueta">MÓDULO 01</span>
+                    </div>
+
+                    <h3>Reservas</h3>
+
+                    <p>
+                        Registra y consulta reservas, fechas y horarios.
+                    </p>
+
+                    <a class="indicador-enlace"
+                       href="../reservas/reservas.html">
+                        Gestionar reservas
+                        <span>→</span>
                     </a>
+
                 </article>
 
-                <article class="tarjeta">
-                    <h2>Clientes</h2>
-                    <p>Registra, consulta y modifica la información de clientes.</p>
-                    <a class="boton" href="../clientes/clientes.html">
-                        Abrir clientes
+                
+                <article class="indicador-card">
+
+                    <div class="indicador-cabecera">
+                        <span class="indicador-icono icono-verde">♙</span>
+                        <span class="indicador-etiqueta">MÓDULO 02</span>
+                    </div>
+
+                    <h3>Clientes</h3>
+
+                    <p>
+                        Administra los datos y la información de tus clientes.
+                    </p>
+
+                    <a class="indicador-enlace"
+                       href="../clientes/clientes.html">
+                        Gestionar clientes
+                        <span>→</span>
                     </a>
+
                 </article>
 
-                <article class="tarjeta">
-                    <h2>Servicios</h2>
-                    <p>Registra y consulta los servicios disponibles.</p>
-                    <a class="boton" href="../servicios/servicios.html">
-                        Abrir servicios
+                
+                <article class="indicador-card">
+
+                    <div class="indicador-cabecera">
+                        <span class="indicador-icono icono-morado">✧</span>
+                        <span class="indicador-etiqueta">MÓDULO 03</span>
+                    </div>
+
+                    <h3>Servicios</h3>
+
+                    <p>
+                        Consulta servicios, precios y duración.
+                    </p>
+
+                    <a class="indicador-enlace"
+                       href="../servicios/servicios.html">
+                        Gestionar servicios
+                        <span>→</span>
                     </a>
+
                 </article>
+
             </div>
         </section>
+
+        
+        <section class="seccion-dashboard">
+
+            <div class="titulo-seccion">
+                <div>
+                    <h2>Actividad del hotel</h2>
+
+                    <p>
+                        Consulta el estado actual de la información registrada.
+                    </p>
+                </div>
+
+                <span class="estado-version" id="estadoActividad">
+                    Consultando datos...
+                </span>
+            </div>
+
+            <div class="actividad-grid">
+
+                
+                <article class="actividad-card">
+
+                    <div class="actividad-icono actividad-azul">
+                        ▦
+                    </div>
+
+                    <div class="actividad-info">
+                        <span class="actividad-label">
+                            Reservas registradas
+                        </span>
+
+                        <strong id="totalReservas">—</strong>
+
+                        <small id="detalleReservas">
+                            Consultando reservas...
+                        </small>
+                    </div>
+
+                </article>
+
+                
+                <article class="actividad-card">
+
+                    <div class="actividad-icono actividad-verde">
+                        ♙
+                    </div>
+
+                    <div class="actividad-info">
+                        <span class="actividad-label">
+                            Clientes registrados
+                        </span>
+
+                        <strong id="totalClientes">—</strong>
+
+                        <small id="detalleClientes">
+                            Consultando clientes...
+                        </small>
+                    </div>
+
+                </article>
+
+                
+                <article class="actividad-card">
+
+                    <div class="actividad-icono actividad-morado">
+                        ✧
+                    </div>
+
+                    <div class="actividad-info">
+                        <span class="actividad-label">
+                            Servicios registrados
+                        </span>
+
+                        <strong id="totalServicios">—</strong>
+
+                        <small id="detalleServicios">
+                            Consultando servicios...
+                        </small>
+                    </div>
+
+                </article>
+
+                
+                <article class="actividad-card">
+
+                    <div class="actividad-icono actividad-ambar">
+                        ◷
+                    </div>
+
+                    <div class="actividad-info">
+                        <span class="actividad-label">
+                            Próximas reservas
+                        </span>
+
+                        <strong id="totalProximas">—</strong>
+
+                        <small id="detalleProximas">
+                            Según la fecha de reserva
+                        </small>
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
+        
+        <section class="seccion-dashboard">
+
+            <div class="titulo-seccion">
+                <div>
+                    <h2>Próximas mejoras</h2>
+
+                    <p>
+                        Funcionalidades previstas para futuras versiones.
+                    </p>
+                </div>
+            </div>
+
+            <div class="mejoras-grid">
+
+                <article class="mejora-card">
+                    <span class="mejora-icono">▤</span>
+
+                    <div>
+                        <h3>Reportes e indicadores</h3>
+
+                        <p>
+                            Analiza las reservas y el rendimiento del negocio.
+                        </p>
+
+                        <span class="mejora-estado">Planificado</span>
+                    </div>
+                </article>
+
+                <article class="mejora-card">
+                    <span class="mejora-icono">♧</span>
+
+                    <div>
+                        <h3>Recordatorios automáticos</h3>
+
+                        <p>
+                            Envía avisos sobre próximas reservas.
+                        </p>
+
+                        <span class="mejora-estado">Planificado</span>
+                    </div>
+                </article>
+
+                <article class="mejora-card">
+                    <span class="mejora-icono">▣</span>
+
+                    <div>
+                        <h3>Pagos en línea</h3>
+
+                        <p>
+                            Facilita el pago de los servicios reservados.
+                        </p>
+
+                        <span class="mejora-estado">Planificado</span>
+                    </div>
+                </article>
+
+                <article class="mejora-card">
+                    <span class="mejora-icono">◷</span>
+
+                    <div>
+                        <h3>Historial de clientes</h3>
+
+                        <p>
+                            Consulta las reservas anteriores de cada cliente.
+                        </p>
+
+                        <span class="mejora-estado">Planificado</span>
+                    </div>
+                </article>
+
+            </div>
+
+        </section>
+
+        
+        <footer class="dashboard-footer">
+            <span>INNOVASUN · Sistema de gestión</span>
+
+            <span>
+                Primera versión · Clientes, servicios y reservas
+            </span>
+        </footer>
+
     </main>
+</div>
+
+<!-- La lógica de los indicadores está separada del HTML -->
+<script src="dashboard.js" defer></script>
+
 </body>
 </html>

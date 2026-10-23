@@ -1,20 +1,646 @@
-.mensaje {
-    margin-top: 12px;
+.pagina-modulo .dashboard-contenido {
+    flex: 1;
+    min-width: 0;
 }
 
-.mensaje.exito {
+/* ENCABEZADO */
+
+.pagina-modulo .dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.pagina-modulo .dashboard-header h1 {
+    margin: 0;
+    color: #172b50;
+    font-size: 22px;
+    line-height: 1.3;
+    letter-spacing: -0.3px;
+}
+
+.pagina-modulo .texto-superior {
+    margin: 0 0 4px;
+    color: #647b9f;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pagina-modulo .subtitulo-header {
+    margin: 4px 0 0;
+    color: #7184a2;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.pagina-modulo .boton-volver {
+    flex-shrink: 0;
+    padding: 8px 12px;
+    border: 0;
+    border-radius: 6px;
+    background: #2563eb;
+    color: #fff;
+    font-size: 10px;
+    text-decoration: none;
+}
+
+.pagina-modulo .boton-volver:hover {
+    background: #1d4ed8;
+}
+
+/* BIENVENIDA */
+
+.pagina-modulo .bienvenida-modulo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    min-height: 90px;
+    margin-bottom: 16px;
+    padding: 20px;
+    background: linear-gradient(110deg, #eaf1ff, #ffffff);
+    border: 1px solid #dce7fb;
+    border-radius: 12px;
+    box-shadow: none;
+    color: #172b50;
+}
+
+.pagina-modulo .bienvenida-modulo .etiqueta-seccion {
+    color: #3768c9;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pagina-modulo .bienvenida-modulo h2 {
+    margin: 7px 0;
+    color: #172b50;
+    font-size: 17px;
+    line-height: 1.4;
+}
+
+.pagina-modulo .bienvenida-modulo p {
+    margin: 0;
+    color: #7184a2;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.pagina-modulo .bienvenida-icono {
+    display: grid;
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    place-items: center;
+    border: 1px solid #dce7fb;
+    border-radius: 12px;
+    background: #fff;
+    color: #2563eb;
+    font-size: 23px;
+}
+
+/* PANELES */
+
+.pagina-modulo .modulo-panel {
+    margin-bottom: 16px;
+    padding: 18px;
+    background: #fff;
+    border: 1px solid #e2eaf5;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgb(30 64 120 / 4%);
+}
+
+/* CABECERA DEL FORMULARIO */
+
+.pagina-modulo .titulo-panel {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 14px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.pagina-modulo .icono-titulo {
+    display: grid;
+    flex-shrink: 0;
+    width: 30px;
+    height: 30px;
+    place-items: center;
+    border-radius: 9px;
+    background: #eaf1ff;
+    color: #2563eb;
+    font-size: 19px;
+}
+
+.pagina-modulo .titulo-panel h2,
+.pagina-modulo .titulo-listado h2 {
+    margin: 0;
+    color: #172b50;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.pagina-modulo .titulo-panel p,
+.pagina-modulo .titulo-listado p {
+    margin: 4px 0 0;
+    color: #7b8da8;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+/* FORMULARIO */
+
+.pagina-modulo .form-servicio {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: none;
+}
+
+.pagina-modulo .campo-servicio {
+    display: flex;
+    min-width: 0;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.pagina-modulo .campo-completo {
+    grid-column: 1 / -1;
+}
+
+.pagina-modulo .campo-servicio label {
+    color: #344767;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.pagina-modulo .campo-servicio input,
+.pagina-modulo .campo-servicio textarea {
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 0;
+    padding: 9px 10px;
+    border: 1px solid #dfe7f3;
+    border-radius: 7px;
+    background: #fbfcff;
+    color: #243653;
+    font-family: inherit;
+    font-size: 11px;
+}
+
+.pagina-modulo .campo-servicio input {
+    min-height: 36px;
+}
+
+.pagina-modulo .campo-servicio textarea {
+    min-height: 65px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.pagina-modulo .campo-servicio input::placeholder,
+.pagina-modulo .campo-servicio textarea::placeholder {
+    color: #95a5bd;
+}
+
+.pagina-modulo .campo-servicio input:focus,
+.pagina-modulo .campo-servicio textarea:focus {
+    outline: 2px solid #bfdbfe;
+    border-color: #2563eb;
+}
+
+.pagina-modulo .campo-servicio small {
+    color: #8a9bb3;
+    font-size: 9px;
+    line-height: 1.4;
+}
+
+/* BOTONES DEL FORMULARIO */
+
+.pagina-modulo .acciones-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.pagina-modulo .acciones-formulario button {
+    min-height: 32px;
+    padding: 8px 11px;
+    border-radius: 6px;
+    font-size: 10px;
+}
+
+/* MENSAJES */
+
+.pagina-modulo #mensaje {
+    margin: 10px 0 0;
+    font-size: 10px;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.pagina-modulo #mensaje:empty {
+    display: none;
+}
+
+.pagina-modulo #mensaje.exito {
     color: #15803d;
 }
 
-.mensaje.error {
+.pagina-modulo #mensaje.error {
     color: #b91c1c;
 }
 
-button:disabled {
-    opacity: 0.6;
+/* LISTADO */
+
+.pagina-modulo .titulo-listado {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 13px;
+}
+
+.pagina-modulo .boton-actualizar {
+    flex-shrink: 0;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 6px;
+    background: #edf3ff;
+    color: #2563eb;
+    font-family: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.pagina-modulo .boton-actualizar:hover {
+    background: #dce8ff;
+}
+
+/* TABLA */
+
+.pagina-modulo .tabla-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e2eaf5;
+    border-radius: 7px;
+}
+
+.pagina-modulo .tabla-servicios {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+    font-size: 10px;
+}
+
+.pagina-modulo .tabla-servicios th {
+    padding: 10px;
+    background: #f3f6fc;
+    color: #7588a5;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.3px;
+    text-align: left;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.pagina-modulo .tabla-servicios td {
+    padding: 10px;
+    border-bottom: 1px solid #edf1f7;
+    color: #3d506d;
+    text-align: left;
+    vertical-align: middle;
+    overflow-wrap: anywhere;
+}
+
+.pagina-modulo .tabla-servicios tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pagina-modulo .tabla-servicios tbody tr:hover {
+    background: #f9fbff;
+}
+
+/* ACCIONES DE LA TABLA */
+
+.pagina-modulo .acciones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+}
+
+.pagina-modulo .acciones button {
+    padding: 5px 7px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 9px;
+    cursor: pointer;
+}
+
+.pagina-modulo .acciones button:not(.eliminar) {
+    background: #e8f0ff;
+    color: #2563eb;
+}
+
+.pagina-modulo .acciones button:not(.eliminar):hover {
+    background: #d6e5ff;
+}
+
+.pagina-modulo .acciones .eliminar {
+    background: #fff0f0;
+    color: #dc2626;
+}
+
+.pagina-modulo .acciones .eliminar:hover:not(:disabled) {
+    background: #fee2e2;
+}
+
+.pagina-modulo .acciones button:disabled {
+    opacity: 0.45;
     cursor: not-allowed;
 }
 
-[hidden] {
+/* RESERVAS ASOCIADAS */
+
+.pagina-modulo .estado-reservas {
+    display: inline-block;
+    padding: 4px 7px;
+    border-radius: 6px;
+    font-size: 9px;
+    white-space: nowrap;
+}
+
+.pagina-modulo .estado-reservas.sin-reservas {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.pagina-modulo .estado-reservas.con-reservas {
+    background: #fef0c7;
+    color: #a16207;
+}
+
+.pagina-modulo .estado-reservas.error-reservas {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+.pagina-modulo .nota-tabla {
+    margin: 10px 0 0;
+    color: #8595ac;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+/* PIE DE PÁGINA */
+
+.pagina-modulo .dashboard-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 8px;
+    padding-top: 14px;
+    border-top: 1px solid #e2eaf5;
+    color: #8999b0;
+    font-size: 9px;
+}
+
+/* BARRA LATERAL
+   Reutiliza las dimensiones definidas en global.css.
+   Solo ajusta la sección adicional de navegación. */
+
+.pagina-modulo .menu-etiqueta-futuras {
+    margin-top: 18px;
+    padding-top: 16px;
+    border-top: 1px solid rgb(255 255 255 / 10%);
+}
+
+.pagina-modulo .navegacion-futuras {
+    margin-top: 0;
+}
+
+.pagina-modulo .navegacion-futuras .nav-enlace {
+    cursor: default;
+}
+
+.pagina-modulo .menu-pie {
+    margin-top: auto;
+}
+
+/* ELEMENTOS OCULTOS */
+
+.pagina-modulo [hidden] {
     display: none !important;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 700px) {
+    .pagina-modulo .dashboard-header {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .pagina-modulo .bienvenida-modulo {
+        padding: 16px;
+    }
+
+    .pagina-modulo .bienvenida-modulo h2 {
+        font-size: 16px;
+    }
+
+    .pagina-modulo .modulo-panel {
+        padding: 15px;
+    }
+
+    .pagina-modulo .form-servicio {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pagina-modulo .campo-completo {
+        grid-column: auto;
+    }
+
+    .pagina-modulo .titulo-listado {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pagina-modulo .boton-actualizar {
+        width: 100%;
+    }
+
+    .pagina-modulo .dashboard-footer {
+        flex-direction: column;
+    }
+}
+.pagina-modulo .dashboard-header h1 {
+    font-size: 28px;
+    line-height: 1.3;
+}
+
+.pagina-modulo .texto-superior {
+    font-size: 11px;
+    margin-bottom: 6px;
+}
+
+.pagina-modulo .subtitulo-header {
+    font-size: 13px;
+    line-height: 1.5;
+    margin-top: 6px;
+}
+
+/* Panel de bienvenida */
+.pagina-modulo .bienvenida-modulo {
+    padding: 24px;
+}
+
+.pagina-modulo .bienvenida-modulo .etiqueta-seccion {
+    font-size: 11px;
+}
+
+.pagina-modulo .bienvenida-modulo h2 {
+    font-size: 23px;
+    line-height: 1.4;
+    margin: 9px 0;
+}
+
+.pagina-modulo .bienvenida-modulo p {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Títulos de paneles */
+.pagina-modulo .titulo-panel h2,
+.pagina-modulo .titulo-listado h2 {
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.pagina-modulo .titulo-panel p,
+.pagina-modulo .titulo-listado p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Etiquetas y campos */
+.pagina-modulo .campo-servicio label {
+    font-size: 12px;
+}
+
+.pagina-modulo .campo-servicio input,
+.pagina-modulo .campo-servicio textarea {
+    font-size: 13px;
+    padding: 11px 12px;
+}
+
+.pagina-modulo .campo-servicio input {
+    min-height: 40px;
+}
+
+.pagina-modulo .campo-servicio small {
+    font-size: 10px;
+}
+
+
+.pagina-modulo .acciones-formulario button {
+    min-height: 38px;
+    padding: 10px 14px;
+    font-size: 12px;
+}
+
+
+.pagina-modulo #mensaje {
+    font-size: 12px;
+}
+
+
+.pagina-modulo .boton-actualizar {
+    padding: 9px 12px;
+    font-size: 11px;
+}
+
+
+.pagina-modulo .tabla-servicios {
+    font-size: 12px;
+}
+
+.pagina-modulo .tabla-servicios th {
+    padding: 13px 11px;
+    font-size: 10px;
+}
+
+.pagina-modulo .tabla-servicios td {
+    padding: 12px 11px;
+}
+
+
+.pagina-modulo .acciones button {
+    padding: 6px 9px;
+    font-size: 10px;
+}
+
+
+.pagina-modulo .estado-reservas {
+    padding: 5px 8px;
+    font-size: 10px;
+}
+
+
+.pagina-modulo .nota-tabla,
+.pagina-modulo .dashboard-footer {
+    font-size: 10px;
+}
+
+
+@media (max-width: 700px) {
+    .pagina-modulo .dashboard-header h1 {
+        font-size: 22px;
+    }
+
+    .pagina-modulo .bienvenida-modulo h2 {
+        font-size: 18px;
+    }
+
+    .pagina-modulo .titulo-panel h2,
+    .pagina-modulo .titulo-listado h2 {
+        font-size: 16px;
+    }
+}
+
+.pagina-modulo .dashboard-header .boton-volver {
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 11px 15px;
+    border: none;
+    border-radius: 7px;
+    background: #2563eb;
+    color: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.pagina-modulo .dashboard-header .boton-volver:hover {
+    background: #1d4ed8;
+}
+
+.pagina-modulo .dashboard-header .boton-volver:focus-visible {
+    outline: 2px solid #93c5fd;
+    outline-offset: 3px;
 }

@@ -3,68 +3,229 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservasPro | Servicios</title>
+    <title>INNOVASUN | Gestión de servicios</title>
     <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="../CSS/servicios.css">
+    <script src="servicios.js" defer></script>
 </head>
-<body>
-    <header class="encabezado">
-        <div>
-            <h1>ReservasPro</h1>
-            <p>Gestión de servicios</p>
-        </div>
-        <a class="boton" href="../frontend/index.html">Volver al inicio</a>
-    </header>
+<body class="pagina-dashboard pagina-modulo">
+    <div class="dashboard-layout">
 
-    <main class="contenedor">
-        <section class="panel">
-            <h2 id="tituloFormulario">Registrar servicio</h2>
+        <aside class="menu-lateral">
+            <a href="../frontend/index.html" class="marca">
+                <span class="marca-logo">I</span>
+                <span class="marca-texto">
+                    <strong>INNOVASUN</strong>
+                    <small>HOTEL & RESORT</small>
+                </span>
+            </a>
 
-            <form id="formServicio">
-                <label for="nombre">Nombre del servicio</label>
-                <input id="nombre" type="text" maxlength="100" required>
+            <p class="menu-etiqueta">MENÚ PRINCIPAL</p>
 
-                <label for="descripcion">Descripción</label>
-                <textarea id="descripcion" maxlength="500" rows="3"></textarea>
+            <nav class="navegacion">
+                <a class="nav-enlace" href="../frontend/index.html">
+                    <span class="nav-icono">⌂</span>
+                    <span>Panel principal</span>
+                </a>
 
-                <label for="precio">Precio</label>
-                <input id="precio" type="number" min="0" step="0.01" required>
+                <a class="nav-enlace" href="../reservas/reservas.html">
+                    <span class="nav-icono">▦</span>
+                    <span>Reservas</span>
+                </a>
 
-                <div class="acciones-formulario">
-                    <button id="btnGuardar" type="submit">Registrar servicio</button>
-                    <button id="btnCancelar" type="button" hidden>Cancelar edición</button>
+                <a class="nav-enlace" href="../clientes/clientes.html">
+                    <span class="nav-icono">♙</span>
+                    <span>Clientes</span>
+                </a>
+
+                <a class="nav-enlace activo"
+                   href="../servicios/servicios.html" aria-current="page">
+                    <span class="nav-icono">◇</span>
+                    <span>Servicios</span>
+                </a>
+            </nav>
+
+            <p class="menu-etiqueta menu-etiqueta-futuras">
+                FUTURAS MEJORAS
+            </p>
+
+            <nav class="navegacion navegacion-futuras">
+                <div class="nav-enlace nav-pendiente">
+                    <span class="nav-icono">▤</span>
+                    <span>Reportes</span>
+                    <span class="nav-tag">Próximo</span>
                 </div>
-            </form>
 
-            <p id="mensaje" class="mensaje" role="status" aria-live="polite"></p>
-        </section>
+                <div class="nav-enlace nav-pendiente">
+                    <span class="nav-icono">♧</span>
+                    <span>Recordatorios</span>
+                    <span class="nav-tag">Próximo</span>
+                </div>
 
-        <section class="panel">
-            <div class="encabezado-tabla">
-                <h2>Servicios registrados</h2>
-                <button id="btnActualizar" type="button">Actualizar lista</button>
+                <div class="nav-enlace nav-pendiente">
+                    <span class="nav-icono">▣</span>
+                    <span>Pagos en línea</span>
+                </div>
+
+                <div class="nav-enlace nav-pendiente">
+                    <span class="nav-icono">◷</span>
+                    <span>Historial de clientes</span>
+                </div>
+            </nav>
+
+            <div class="menu-pie">
+                <span class="indicador-conexion"></span>
+                <div>
+                    <strong>Gestión centralizada</strong>
+                    <small>Versión inicial del sistema</small>
+                </div>
             </div>
+        </aside>
 
-            <div class="tabla-contenedor">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>Descripción</th>
-                            <th>Precio</th>
-                            <th>Reservas asociadas</th>
-                            <th>Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tablaServicios">
-                        <tr><td colspan="6">Cargando servicios...</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+        <main class="dashboard-contenido">
 
-    <script src="servicios.js"></script>
+            <header class="dashboard-header">
+                <div>
+                    <p class="texto-superior">INNOVASUN / GESTIÓN</p>
+                    <h1>Gestión de servicios</h1>
+                    <p class="subtitulo-header">
+                        Administra la oferta de servicios del sistema.
+                    </p>
+                </div>
+
+                <a class="boton boton-volver" href="../frontend/index.html">
+                    ← Volver al panel
+                </a>
+            </header>
+
+            <section class="bienvenida bienvenida-modulo">
+                <div>
+                    <span class="etiqueta-seccion">
+                        CATÁLOGO DE SERVICIOS
+                    </span>
+                    <h2>Conoce nuestros servicios.</h2>
+                    <p>
+                        Registra servicios, actualiza sus precios y consulta
+                        las reservas que tienen asociadas.
+                    </p>
+                </div>
+
+                <div class="bienvenida-icono" aria-hidden="true">♧</div>
+            </section>
+
+            <section class="modulo-panel">
+                <div class="titulo-panel">
+                    <div class="icono-titulo">＋</div>
+                    <div>
+                        <h2 id="tituloFormulario">Registrar servicio</h2>
+                        <p>
+                            Completa los datos para registrar un nuevo servicio.
+                        </p>
+                    </div>
+                </div>
+
+                <form id="formServicio" class="form-servicio">
+                    <div class="campo-servicio">
+                        <label for="nombre">Nombre del servicio</label>
+                        <input
+                            id="nombre"
+                            type="text"
+                            maxlength="100"
+                            placeholder="Ej. Habitación premium"
+                            required
+                        >
+                        <small>Introduce el nombre del servicio.</small>
+                    </div>
+
+                    <div class="campo-servicio">
+                        <label for="precio">Precio (S/)</label>
+                        <input
+                            id="precio"
+                            type="number"
+                            min="0"
+                            step="0.01"
+                            placeholder="0.00"
+                            required
+                        >
+                        <small>Indica el precio del servicio en soles.</small>
+                    </div>
+
+                    <div class="campo-servicio campo-completo">
+                        <label for="descripcion">Descripción</label>
+                        <textarea
+                            id="descripcion"
+                            maxlength="500"
+                            rows="3"
+                            placeholder="Describe las características del servicio..."
+                        ></textarea>
+                        <small>Máximo 500 caracteres.</small>
+                    </div>
+
+                    <div class="acciones-formulario campo-completo">
+                        <button id="btnGuardar" type="submit">
+                            Registrar servicio
+                        </button>
+
+                        <button
+                            id="btnCancelar"
+                            class="secundario"
+                            type="button"
+                            hidden
+                        >
+                            Cancelar edición
+                        </button>
+                    </div>
+                </form>
+
+                <p id="mensaje" class="mensaje"
+                   role="status" aria-live="polite"></p>
+            </section>
+
+            <section class="modulo-panel panel-listado">
+                <div class="titulo-listado">
+                    <div>
+                        <h2>Servicios registrados</h2>
+                        <p>Consulta los datos y las reservas asociadas.</p>
+                    </div>
+
+                    <button id="btnActualizar"
+                            class="boton-actualizar" type="button">
+                        ↻ Actualizar lista
+                    </button>
+                </div>
+
+                <div class="tabla-contenedor">
+                    <table class="tabla-servicios">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Descripción</th>
+                                <th>Precio</th>
+                                <th>Reservas asociadas</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+
+                        <tbody id="tablaServicios">
+                            <tr>
+                                <td colspan="6">Cargando servicios...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <p class="nota-tabla">
+                    Los servicios con reservas asociadas no se pueden eliminar.
+                </p>
+            </section>
+
+            <footer class="dashboard-footer">
+                <span>INNOVASUN · Gestión de servicios</span>
+                <span>Sistema de gestión · Primera versión</span>
+            </footer>
+
+        </main>
+    </div>
 </body>
 </html>
