@@ -1,116 +1,429 @@
-#formCliente {
-    display: grid;
-    gap: 10px;
+.pagina-modulo .dashboard-contenido {
+    padding-bottom: 10px;
 }
 
-#formCliente input {
-    width: 100%;
-    padding: 10px 12px;
-    border: 1px solid #cbd5e1;
+.pagina-modulo .boton-volver {
+    white-space: nowrap;
+    font-size: 12px;
     border-radius: 8px;
-    font: inherit;
-    box-sizing: border-box;
 }
 
-#formCliente input:focus {
-    outline: 2px solid #93c5fd;
-    border-color: #2563eb;
-}
+/* Bienvenida */
 
-.acciones-formulario,
-.acciones {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.acciones-formulario {
-    margin-top: 8px;
-}
-
-.acciones button,
-.acciones-formulario button,
-.encabezado-tabla button {
-    padding: 8px 12px;
-    border: 0;
-    border-radius: 6px;
-    cursor: pointer;
-}
-
-.acciones .eliminar {
-    background: #dc2626;
-    color: white;
-}
-
-.acciones .eliminar:disabled {
-    background: #9ca3af;
-    cursor: not-allowed;
-}
-
-.encabezado-tabla {
+.pagina-modulo .clientes-bienvenida {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 12px;
-    flex-wrap: wrap;
+    gap: 20px;
+    padding: 24px 27px;
+    margin-bottom: 22px;
+    border: 1px solid #d9e5fa;
+    border-radius: 14px;
+    background: linear-gradient(115deg, #e8f0ff, #ffffff);
 }
 
-.tabla-contenedor {
-    overflow-x: auto;
+.pagina-modulo .clientes-etiqueta {
+    color: #3568bd;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-.tabla-contenedor table {
+.pagina-modulo .clientes-bienvenida h2 {
+    margin: 10px 0 8px;
+    color: #172957;
+    font-size: 23px;
+}
+
+.pagina-modulo .clientes-bienvenida p {
+    max-width: 600px;
+    margin: 0;
+    color: #71809a;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pagina-modulo .clientes-icono {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 17px;
+    color: #2f6de0;
+    background: #fff;
+    border: 1px solid #d9e5fa;
+    font-size: 34px;
+}
+
+/* Paneles */
+
+.pagina-modulo .clientes-panel {
+    padding: 24px;
+    margin-bottom: 22px;
+    background: #fff;
+    border: 1px solid #e1e8f2;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgb(30 55 90 / 3%);
+}
+
+.pagina-modulo .clientes-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.pagina-modulo .clientes-panel-icono {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #eaf1ff;
+    color: #2865dc;
+    font-size: 25px;
+}
+
+.pagina-modulo .clientes-panel-header h2,
+.pagina-modulo .encabezado-tabla h2 {
+    margin: 0;
+    color: #1b2c4e;
+    font-size: 17px;
+}
+
+.pagina-modulo .clientes-panel-header p,
+.pagina-modulo .encabezado-tabla p {
+    margin: 6px 0 0;
+    color: #8190a5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Formulario */
+
+.pagina-modulo #formCliente.form-cliente {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px 22px;
+    max-width: none;
+    margin: 0;
+}
+
+.pagina-modulo .campo-cliente {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pagina-modulo .campo-cliente label {
+    color: #34445f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pagina-modulo .campo-cliente input {
     width: 100%;
+    min-height: 43px;
+    padding: 11px 12px;
+    box-sizing: border-box;
+    border: 1px solid #dce4f0;
+    border-radius: 8px;
+    background: #fbfcff;
+    color: #243653;
+    font: inherit;
+    font-size: 13px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.pagina-modulo .campo-cliente input:focus {
+    outline: none;
+    border-color: #5386eb;
+    box-shadow: 0 0 0 3px rgb(53 111 224 / 12%);
+    background: #fff;
+}
+
+.pagina-modulo .campo-cliente small {
+    color: #8a97aa;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.pagina-modulo .acciones-formulario {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 3px;
+}
+
+.pagina-modulo .acciones-formulario button {
+    min-height: 39px;
+    padding: 10px 16px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pagina-modulo .acciones-formulario button:focus-visible,
+.pagina-modulo .encabezado-tabla button:focus-visible,
+.pagina-modulo .tabla-clientes button:focus-visible {
+    outline: 3px solid #b7d0ff;
+    outline-offset: 2px;
+}
+
+.pagina-modulo #btnCancelar {
+    background: #edf1f7;
+    color: #465873;
+}
+
+.pagina-modulo #btnCancelar:hover {
+    background: #dfe6f0;
+}
+
+.pagina-modulo #formCliente button:disabled,
+.pagina-modulo #btnActualizar:disabled,
+.pagina-modulo .tabla-clientes button:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.pagina-modulo #mensaje {
+    margin: 12px 0 0;
+    overflow-wrap: anywhere;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pagina-modulo #mensaje:empty {
+    display: none;
+}
+
+.pagina-modulo #mensaje.exito {
+    color: #15803d;
+}
+
+.pagina-modulo #mensaje.error {
+    color: #b91c1c;
+}
+
+/* Encabezado del listado */
+
+.pagina-modulo .encabezado-tabla {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pagina-modulo .encabezado-tabla button {
+    min-height: 39px;
+    padding: 10px 15px;
+    border: 0;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pagina-modulo .encabezado-tabla button.secundario {
+    background: #edf3ff;
+    color: #285ab5;
+}
+
+.pagina-modulo .encabezado-tabla button.secundario:hover {
+    background: #dce8ff;
+}
+
+/* Tabla */
+
+.pagina-modulo .tabla-clientes-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e6ebf3;
+    border-radius: 9px;
+}
+
+.pagina-modulo .tabla-clientes {
+    width: 100%;
+    min-width: 850px;
     border-collapse: collapse;
+    font-size: 12px;
 }
 
-.tabla-contenedor th,
-.tabla-contenedor td {
-    padding: 12px;
-    border-bottom: 1px solid #e2e8f0;
+.pagina-modulo .tabla-clientes th {
+    padding: 14px 13px;
+    background: #f5f8fd;
+    color: #65748c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
     text-align: left;
-}
-
-.estado-reservas {
-    display: inline-block;
-    padding: 5px 9px;
-    border-radius: 6px;
-    font-size: 0.85rem;
+    text-transform: uppercase;
     white-space: nowrap;
 }
 
-.estado-reservas.sin-reservas {
+.pagina-modulo .tabla-clientes td {
+    padding: 13px;
+    border-bottom: 1px solid #edf1f7;
+    color: #40516b;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.pagina-modulo .tabla-clientes tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pagina-modulo .tabla-clientes tbody tr:hover {
+    background: #f8faff;
+}
+
+.pagina-modulo .tabla-clientes td[colspan] {
+    padding: 25px;
+    color: #8190a5;
+    text-align: center;
+}
+
+/* Estado de reservas asociadas */
+
+.pagina-modulo .estado-reservas {
+    display: inline-block;
+    padding: 5px 9px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.pagina-modulo .estado-reservas.sin-reservas {
     color: #166534;
     background: #dcfce7;
 }
 
-.estado-reservas.con-reservas {
+.pagina-modulo .estado-reservas.con-reservas {
     color: #92400e;
     background: #fef3c7;
 }
 
-.estado-reservas.error-reservas {
+.pagina-modulo .estado-reservas.error-reservas {
     color: #991b1b;
     background: #fee2e2;
 }
 
-.mensaje {
-    margin-top: 12px;
+/* Botones de acciones */
+
+.pagina-modulo .tabla-clientes .acciones {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    flex-wrap: wrap;
 }
 
-.mensaje.exito {
-    color: #15803d;
+.pagina-modulo .tabla-clientes .acciones button {
+    padding: 7px 10px;
+    border: 0;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
 }
 
-.mensaje.error {
-    color: #b91c1c;
+.pagina-modulo .tabla-clientes .acciones button:first-child {
+    background: #eaf1ff;
+    color: #285ab5;
 }
 
-button:disabled {
-    opacity: 0.6;
+.pagina-modulo .tabla-clientes .acciones button:first-child:hover {
+    background: #d8e5ff;
+}
+
+.pagina-modulo .tabla-clientes .acciones button.eliminar {
+    background: #fff0f0;
+    color: #c33737;
+}
+
+.pagina-modulo .tabla-clientes .acciones button.eliminar:hover:not(:disabled) {
+    background: #ffdddd;
+}
+
+.pagina-modulo .tabla-clientes .acciones button.eliminar:disabled {
+    background: #f0f1f4;
+    color: #929baa;
     cursor: not-allowed;
 }
 
-[hidden] {
-    display: none !important;
+.pagina-modulo .nota-tabla {
+    margin: 13px 0 0;
+    color: #8a97aa;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* Adaptación a pantallas medianas */
+
+@media (max-width: 1000px) {
+    .pagina-modulo .dashboard-contenido {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .pagina-modulo .clientes-panel {
+        padding: 20px;
+    }
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+    .pagina-modulo .dashboard-header {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .pagina-modulo .boton-volver {
+        margin-bottom: 16px;
+    }
+
+    .pagina-modulo #formCliente.form-cliente {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .pagina-modulo .acciones-formulario {
+        grid-column: 1;
+    }
+
+    .pagina-modulo .clientes-panel {
+        padding: 17px;
+    }
+
+    .pagina-modulo .clientes-bienvenida {
+        padding: 20px 17px;
+    }
+
+    .pagina-modulo .clientes-bienvenida h2 {
+        font-size: 20px;
+    }
+
+    .pagina-modulo .clientes-icono {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 12px;
+    }
+
+    .pagina-modulo .encabezado-tabla {
+        align-items: flex-start;
+    }
 }

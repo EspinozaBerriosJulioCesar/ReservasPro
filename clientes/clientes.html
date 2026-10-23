@@ -3,87 +3,232 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservasPro | Clientes</title>
+    <meta name="theme-color" content="#172957">
+
+    <title>INNOVASUN | Clientes</title>
 
     <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="../CSS/clientes.css">
+    <script src="clientes.js" defer></script>
 </head>
-<body>
-    <header class="encabezado">
-        <div>
-            <h1>ReservasPro</h1>
-            <p>Gestión de clientes</p>
+
+<body class="pagina-dashboard pagina-modulo">
+
+<div class="dashboard-layout">
+
+    
+    <aside class="menu-lateral">
+
+        <a class="marca" href="../frontend/index.html">
+            <div class="marca-logo" aria-hidden="true">I</div>
+            <div class="marca-texto">
+                <strong>INNOVASUN</strong>
+                <span>HOTEL &amp; RESORT</span>
+            </div>
+        </a>
+
+        <div class="menu-etiqueta">MENÚ PRINCIPAL</div>
+
+        <nav class="navegacion" aria-label="Menú principal">
+
+            <a class="nav-enlace" href="../frontend/index.html">
+                <span class="nav-icono">⌂</span>
+                Panel principal
+            </a>
+
+            <a class="nav-enlace" href="../reservas/reservas.html">
+                <span class="nav-icono">▦</span>
+                Reservas
+            </a>
+
+            <a class="nav-enlace activo" href="clientes.html">
+                <span class="nav-icono">♙</span>
+                Clientes
+            </a>
+
+            <a class="nav-enlace" href="../servicios/servicios.html">
+                <span class="nav-icono">✧</span>
+                Servicios
+            </a>
+
+        </nav>
+
+        <div class="menu-separador"></div>
+
+        <div class="menu-etiqueta">FUTURAS MEJORAS</div>
+
+        <nav class="navegacion" aria-label="Funcionalidades futuras">
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▤</span>
+                Reportes
+                <span class="nav-tag">Próximo</span>
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">♧</span>
+                Recordatorios
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▣</span>
+                Pagos en línea
+            </span>
+
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">◷</span>
+                Historial de clientes
+            </span>
+
+        </nav>
+
+        <div class="menu-pie">
+            <div class="indicador-conexion"></div>
+            <div>
+                <strong>Gestión centralizada</strong>
+                <span>Versión inicial del sistema</span>
+            </div>
         </div>
 
-        <a class="boton" href="../frontend/index.html">
-            Volver al inicio
-        </a>
-    </header>
+    </aside>
 
-    <main class="contenedor">
+    
+    <main class="dashboard-contenido">
 
-        <section class="panel">
-            <h2 id="tituloFormulario">Registrar cliente</h2>
+        <header class="dashboard-header">
 
-            <form id="formCliente">
-                <label for="nombre">Nombre completo</label>
-                <input
-                    id="nombre"
-                    name="nombre"
-                    type="text"
-                    maxlength="100"
-                    required
-                >
+            <div>
+                <p class="texto-superior">INNOVASUN / GESTIÓN</p>
+                <h1>Gestión de clientes</h1>
+                <p class="subtitulo-header">
+                    Administra la información de los clientes del sistema.
+                </p>
+            </div>
 
-                <label for="correo">Correo electrónico</label>
-                <input
-                    id="correo"
-                    name="correo"
-                    type="email"
-                    maxlength="120"
-                    required
-                >
+            <a class="boton boton-volver" href="../frontend/index.html">
+                ← Volver al panel
+            </a>
 
-                <label for="telefono">Teléfono</label>
-                <input
-                    id="telefono"
-                    name="telefono"
-                    type="tel"
-                    maxlength="20"
-                    required
-                >
+        </header>
+
+        
+        <section class="clientes-bienvenida">
+            <div>
+                <span class="clientes-etiqueta">DIRECTORIO DE CLIENTES</span>
+                <h2>Conoce a tus clientes.</h2>
+                <p>
+                    Registra sus datos, actualiza su información
+                    y consulta las reservas que tienen asociadas.
+                </p>
+            </div>
+
+            <div class="clientes-icono" aria-hidden="true">♙</div>
+        </section>
+
+        <!-- FORMULARIO -->
+        <section class="clientes-panel">
+
+            <div class="clientes-panel-header">
+                <div class="clientes-panel-icono">＋</div>
+                <div>
+                    <h2 id="tituloFormulario">Registrar cliente</h2>
+                    <p>
+                        Completa los datos para registrar un nuevo cliente.
+                    </p>
+                </div>
+            </div>
+
+            <form id="formCliente" class="form-cliente">
+
+                <div class="campo-cliente">
+                    <label for="nombre">Nombre completo</label>
+                    <input
+                        id="nombre"
+                        name="nombre"
+                        type="text"
+                        maxlength="100"
+                        placeholder="Ej. María García López"
+                        autocomplete="name"
+                        required
+                    >
+                    <small>Introduce el nombre completo del cliente.</small>
+                </div>
+
+                <div class="campo-cliente">
+                    <label for="correo">Correo electrónico</label>
+                    <input
+                        id="correo"
+                        name="correo"
+                        type="email"
+                        maxlength="120"
+                        placeholder="cliente@correo.com"
+                        autocomplete="email"
+                        required
+                    >
+                    <small>Se utilizará como dato de contacto.</small>
+                </div>
+
+                <div class="campo-cliente">
+                    <label for="telefono">Teléfono</label>
+                    <input
+                        id="telefono"
+                        name="telefono"
+                        type="tel"
+                        maxlength="20"
+                        placeholder="Número de contacto"
+                        autocomplete="tel"
+                        required
+                    >
+                    <small>Introduce el teléfono del cliente.</small>
+                </div>
 
                 <div class="acciones-formulario">
+
                     <button id="btnGuardar" type="submit">
                         Registrar cliente
                     </button>
 
-                    <button id="btnCancelar" type="button" hidden>
+                    <button
+                        id="btnCancelar"
+                        type="button"
+                        class="secundario"
+                        hidden
+                    >
                         Cancelar edición
                     </button>
+
                 </div>
+
             </form>
 
             <p id="mensaje" class="mensaje" role="status"
                aria-live="polite"></p>
+
         </section>
 
-        <section class="panel">
-            <div class="encabezado-tabla">
-                <h2>Clientes registrados</h2>
+        
+        <section class="clientes-panel">
 
-                <button id="btnActualizar" type="button">
-                    Actualizar lista
+            <div class="encabezado-tabla">
+                <div>
+                    <h2>Clientes registrados</h2>
+                    <p>Consulta los datos y las reservas asociadas a cada cliente.</p>
+                </div>
+
+                <button id="btnActualizar" type="button" class="secundario">
+                    ↻ Actualizar lista
                 </button>
             </div>
 
-            <div class="tabla-contenedor">
-                <table>
+            <div class="tabla-contenedor tabla-clientes-contenedor">
+
+                <table class="tabla-clientes">
+
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>
-                            <th>Correo</th>
+                            <th>Correo electrónico</th>
                             <th>Teléfono</th>
                             <th>Reservas asociadas</th>
                             <th>Acciones</th>
@@ -95,12 +240,26 @@
                             <td colspan="6">Cargando clientes...</td>
                         </tr>
                     </tbody>
+
                 </table>
+
             </div>
+
+            <p class="nota-tabla">
+                Los clientes con reservas asociadas no pueden eliminarse.
+                Primero verifica y administra sus reservas.
+            </p>
+
         </section>
+
+        <footer class="dashboard-footer">
+            <span>INNOVASUN · Gestión de clientes</span>
+            <span>Sistema de gestión · Primera versión</span>
+        </footer>
 
     </main>
 
-    <script src="clientes.js"></script>
+</div>
+
 </body>
 </html>

@@ -209,3 +209,754 @@ th {
         flex-direction: column;
     }
 }
+
+
+.pagina-dashboard {
+    --hotel-azul: #172957;
+    --hotel-azul-claro: #24477e;
+    --hotel-acento: #3675ee;
+    --hotel-fondo: #f4f7fc;
+    --hotel-borde: #e1e8f2;
+    background: var(--hotel-fondo);
+    min-height: 100vh;
+}
+
+.pagina-dashboard .dashboard-layout {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+}
+
+/* Menú lateral */
+
+.pagina-dashboard .menu-lateral {
+    background: linear-gradient(180deg, #172957 0%, #101d3b 100%);
+    color: #fff;
+    padding: 25px 15px 18px;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.pagina-dashboard .marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 3px 8px 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.pagina-dashboard .marca-logo {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: grid;
+    place-items: center;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #4c8bff, #2451ad);
+    border: 1px solid rgb(255 255 255 / 25%);
+    font-size: 28px;
+    font-weight: 800;
+    box-shadow: 0 5px 15px rgb(0 0 0 / 15%);
+}
+
+.pagina-dashboard .marca-texto {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.pagina-dashboard .marca-texto strong {
+    font-size: 19px;
+    letter-spacing: .5px;
+}
+
+.pagina-dashboard .marca-texto span {
+    font-size: 10px;
+    letter-spacing: 1.6px;
+    color: #c0d4ff;
+}
+
+.pagina-dashboard .menu-etiqueta {
+    padding: 0 10px;
+    margin: 4px 0 12px;
+    color: #91a6cc;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.pagina-dashboard .navegacion {
+    display: grid;
+    gap: 5px;
+}
+
+.pagina-dashboard .nav-enlace {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-height: 44px;
+    padding: 10px 12px;
+    border-radius: 9px;
+    color: #c8d5ec;
+    text-decoration: none;
+    font-size: 13px;
+    transition: background .2s, color .2s;
+}
+
+.pagina-dashboard .nav-enlace:hover {
+    background: rgb(255 255 255 / 8%);
+    color: white;
+}
+
+.pagina-dashboard .nav-enlace.activo {
+    color: #fff;
+    background: linear-gradient(90deg, #2857a3, #203e73);
+    box-shadow: inset 3px 0 #69a0ff;
+}
+
+.pagina-dashboard .nav-icono {
+    width: 22px;
+    text-align: center;
+    font-size: 21px;
+    line-height: 1;
+}
+
+.pagina-dashboard .menu-separador {
+    height: 1px;
+    background: rgb(255 255 255 / 12%);
+    margin: 22px 5px;
+}
+
+.pagina-dashboard .nav-pendiente {
+    cursor: default;
+    opacity: .72;
+}
+
+.pagina-dashboard .nav-pendiente:hover {
+    background: transparent;
+}
+
+.pagina-dashboard .nav-tag {
+    margin-left: auto;
+    color: #b9d0ff;
+    background: rgb(83 130 211 / 22%);
+    border-radius: 5px;
+    padding: 3px 5px;
+    font-size: 9px;
+}
+
+.pagina-dashboard .menu-pie {
+    margin-top: auto;
+    padding: 15px 10px 0;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    border-top: 1px solid rgb(255 255 255 / 12%);
+}
+
+.pagina-dashboard .indicador-conexion {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #4ade80;
+    margin-top: 5px;
+}
+
+.pagina-dashboard .menu-pie div:last-child {
+    display: grid;
+    gap: 5px;
+}
+
+.pagina-dashboard .menu-pie strong {
+    font-size: 11px;
+}
+
+.pagina-dashboard .menu-pie span {
+    color: #9db1d4;
+    font-size: 10px;
+}
+
+/* Área principal */
+
+.pagina-dashboard .dashboard-contenido {
+    min-width: 0;
+    padding: 0 30px;
+}
+
+.pagina-dashboard .dashboard-header {
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-bottom: 1px solid var(--hotel-borde);
+    margin-bottom: 25px;
+}
+
+.pagina-dashboard .texto-superior,
+.pagina-dashboard .etiqueta-seccion {
+    color: #5274ac;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+}
+
+.pagina-dashboard .texto-superior {
+    margin: 0 0 6px;
+}
+
+.pagina-dashboard .dashboard-header h1 {
+    margin: 0;
+    font-size: 25px;
+    color: var(--hotel-azul);
+}
+
+.pagina-dashboard .subtitulo-header {
+    margin: 5px 0 0;
+    color: #75839a;
+    font-size: 12px;
+}
+
+.pagina-dashboard .header-derecha {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.pagina-dashboard .perfil-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #24477e;
+    background: #e3ecff;
+    border: 1px solid #ccdcfa;
+    font-weight: 700;
+}
+
+.pagina-dashboard .perfil-info {
+    display: grid;
+    gap: 4px;
+}
+
+.pagina-dashboard .perfil-info strong {
+    color: var(--hotel-azul);
+    font-size: 12px;
+}
+
+.pagina-dashboard .perfil-info span {
+    color: #8190a7;
+    font-size: 10px;
+}
+
+/* Bienvenida */
+
+.pagina-dashboard .bienvenida {
+    position: relative;
+    overflow: hidden;
+    padding: 27px 30px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    background: linear-gradient(115deg, #e7efff, #f7f9ff 75%);
+    border: 1px solid #d8e4fa;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.pagina-dashboard .bienvenida h2 {
+    margin: 10px 0 8px;
+    font-size: 25px;
+    color: #172957;
+}
+
+.pagina-dashboard .bienvenida p {
+    margin: 0;
+    font-size: 13px;
+    color: #657793;
+    line-height: 1.6;
+}
+
+.pagina-dashboard .bienvenida-icono {
+    width: 72px;
+    height: 72px;
+    flex-shrink: 0;
+    border-radius: 22px;
+    display: grid;
+    place-items: center;
+    background: rgb(255 255 255 / 75%);
+    color: #3675ee;
+    font-size: 39px;
+    border: 1px solid #d6e3fa;
+}
+
+/* Secciones y tarjetas */
+
+.pagina-dashboard .seccion-dashboard {
+    margin-bottom: 30px;
+}
+
+.pagina-dashboard .titulo-seccion {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 16px;
+}
+
+.pagina-dashboard .titulo-seccion h2 {
+    color: #1b2c4e;
+    font-size: 17px;
+    margin: 0;
+}
+
+.pagina-dashboard .titulo-seccion p {
+    color: #8190a5;
+    font-size: 12px;
+    margin: 6px 0 0;
+}
+
+.pagina-dashboard .estado-version {
+    padding: 7px 10px;
+    border-radius: 7px;
+    background: #e8efff;
+    color: #315fbb;
+    font-size: 10px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pagina-dashboard .indicadores-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pagina-dashboard .indicador-card {
+    padding: 21px;
+    border: 1px solid var(--hotel-borde);
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 3px 12px rgb(30 55 90 / 3%);
+    transition: transform .2s, box-shadow .2s;
+}
+
+.pagina-dashboard .indicador-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgb(30 55 90 / 8%);
+}
+
+.pagina-dashboard .indicador-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pagina-dashboard .indicador-icono {
+    width: 43px;
+    height: 43px;
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.pagina-dashboard .icono-azul {
+    color: #2865dc;
+    background: #eaf1ff;
+}
+
+.pagina-dashboard .icono-verde {
+    color: #12845c;
+    background: #e6f8f0;
+}
+
+.pagina-dashboard .icono-morado {
+    color: #8051d5;
+    background: #f0eaff;
+}
+
+.pagina-dashboard .indicador-etiqueta {
+    color: #96a2b5;
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: .6px;
+}
+
+.pagina-dashboard .indicador-card h3 {
+    margin: 19px 0 8px;
+    color: #1b2c4e;
+    font-size: 16px;
+}
+
+.pagina-dashboard .indicador-card > p {
+    min-height: 38px;
+    margin: 0 0 18px;
+    color: #78869b;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.pagina-dashboard .indicador-enlace {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 13px;
+    border-top: 1px solid #edf0f6;
+    color: #2865dc;
+    font-size: 12px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.pagina-dashboard .indicador-enlace span {
+    font-size: 18px;
+}
+
+.pagina-dashboard .indicador-enlace:hover {
+    color: #173f99;
+}
+
+/* Accesos rápidos */
+
+.pagina-dashboard .accesos-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.pagina-dashboard .acceso-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+    padding: 17px 15px;
+    border: 1px solid var(--hotel-borde);
+    border-radius: 12px;
+    background: white;
+    color: #1b2c4e;
+    text-decoration: none;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.pagina-dashboard .acceso-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgb(30 55 90 / 7%);
+}
+
+.pagina-dashboard .acceso-icono {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.pagina-dashboard .acceso-azul .acceso-icono {
+    background: #eaf1ff;
+    color: #2865dc;
+}
+
+.pagina-dashboard .acceso-verde .acceso-icono {
+    background: #e6f8f0;
+    color: #12845c;
+}
+
+.pagina-dashboard .acceso-morado .acceso-icono {
+    background: #f0eaff;
+    color: #8051d5;
+}
+
+.pagina-dashboard .acceso-card > span:nth-child(2) {
+    flex: 1;
+    min-width: 0;
+    display: grid;
+    gap: 5px;
+}
+
+.pagina-dashboard .acceso-card strong {
+    font-size: 12px;
+}
+
+.pagina-dashboard .acceso-card small {
+    color: #8491a5;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.pagina-dashboard .acceso-flecha {
+    color: #7088b5;
+    font-size: 18px;
+}
+
+/* Futuras mejoras */
+
+.pagina-dashboard .mejoras-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.pagina-dashboard .mejora-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 18px;
+    background: white;
+    border: 1px solid var(--hotel-borde);
+    border-radius: 12px;
+}
+
+.pagina-dashboard .mejora-icono {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background: #eef3ff;
+    color: #3869bf;
+    display: grid;
+    place-items: center;
+    font-size: 23px;
+}
+
+.pagina-dashboard .mejora-card h3 {
+    margin: 2px 0 7px;
+    color: #243653;
+    font-size: 13px;
+}
+
+.pagina-dashboard .mejora-card p {
+    margin: 0 0 10px;
+    color: #8190a5;
+    font-size: 11px;
+    line-height: 1.6;
+}
+
+.pagina-dashboard .mejora-estado {
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 5px;
+    color: #526a96;
+    background: #edf2fb;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+/* Pie de página */
+
+.pagina-dashboard .dashboard-footer {
+    padding: 20px 0;
+    border-top: 1px solid var(--hotel-borde);
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    color: #8794a8;
+    font-size: 10px;
+}
+
+
+
+@media (max-width: 1100px) {
+    .pagina-dashboard .dashboard-layout {
+        grid-template-columns: 215px minmax(0, 1fr);
+    }
+
+    .pagina-dashboard .dashboard-contenido {
+        padding: 0 20px;
+    }
+
+    .pagina-dashboard .indicadores-grid {
+        gap: 12px;
+    }
+
+    .pagina-dashboard .indicador-card {
+        padding: 16px;
+    }
+
+    .pagina-dashboard .accesos-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+    .pagina-dashboard .dashboard-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-dashboard .menu-lateral {
+        min-height: auto;
+        padding: 16px;
+    }
+
+    .pagina-dashboard .marca {
+        padding: 0 5px 17px;
+    }
+
+    .pagina-dashboard .navegacion {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .pagina-dashboard .menu-etiqueta {
+        margin-top: 10px;
+    }
+
+    .pagina-dashboard .menu-separador {
+        margin: 15px 5px;
+    }
+
+    .pagina-dashboard .menu-pie {
+        margin-top: 18px;
+    }
+
+    .pagina-dashboard .dashboard-contenido {
+        padding: 0 15px;
+    }
+
+    .pagina-dashboard .dashboard-header {
+        min-height: auto;
+        padding: 22px 0;
+        align-items: flex-start;
+    }
+
+    .pagina-dashboard .dashboard-header h1 {
+        font-size: 21px;
+    }
+
+    .pagina-dashboard .perfil-info {
+        display: none;
+    }
+
+    .pagina-dashboard .bienvenida {
+        padding: 22px 18px;
+    }
+
+    .pagina-dashboard .bienvenida h2 {
+        font-size: 21px;
+    }
+
+    .pagina-dashboard .bienvenida-icono {
+        width: 48px;
+        height: 48px;
+        font-size: 27px;
+        border-radius: 14px;
+    }
+
+    .pagina-dashboard .indicadores-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-dashboard .indicador-card > p {
+        min-height: 0;
+    }
+
+    .pagina-dashboard .mejoras-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-dashboard .titulo-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pagina-dashboard .dashboard-footer {
+        flex-direction: column;
+    }
+}
+.pagina-dashboard .actividad-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.pagina-dashboard .actividad-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 13px;
+    min-width: 0;
+    padding: 20px 17px;
+    background: #fff;
+    border: 1px solid var(--hotel-borde);
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgb(30 55 90 / 3%);
+}
+
+.pagina-dashboard .actividad-icono {
+    display: grid;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    place-items: center;
+    border-radius: 11px;
+    font-size: 23px;
+}
+
+.pagina-dashboard .actividad-azul {
+    background: #eaf1ff;
+    color: #2865dc;
+}
+
+.pagina-dashboard .actividad-verde {
+    background: #e6f8f0;
+    color: #12845c;
+}
+
+.pagina-dashboard .actividad-morado {
+    background: #f0eaff;
+    color: #8051d5;
+}
+
+.pagina-dashboard .actividad-ambar {
+    background: #fff4dc;
+    color: #b7791f;
+}
+
+.pagina-dashboard .actividad-info {
+    display: grid;
+    gap: 7px;
+    min-width: 0;
+}
+
+.pagina-dashboard .actividad-label {
+    color: #71809a;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.pagina-dashboard .actividad-info strong {
+    color: #172957;
+    font-size: 26px;
+    line-height: 1.2;
+}
+
+.pagina-dashboard .actividad-info small {
+    color: #8997ac;
+    font-size: 10px;
+    line-height: 1.5;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 1200px) {
+    .pagina-dashboard .actividad-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 700px) {
+    .pagina-dashboard .actividad-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pagina-dashboard .actividad-card {
+        padding: 16px;
+    }
+}

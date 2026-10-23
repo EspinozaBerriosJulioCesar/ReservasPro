@@ -1,30 +1,371 @@
-#formReserva {
-    margin-bottom: 10px;
+.pagina-modulo .dashboard-contenido {
+    padding-bottom: 10px;
 }
 
-#formReserva button {
-    margin-top: 4px;
+.pagina-modulo .boton-volver {
+    white-space: nowrap;
+    font-size: 12px;
+    border-radius: 8px;
 }
 
-#tablaReservas th:first-child,
-#tablaReservas td:first-child {
-    width: 55px;
+.pagina-modulo .reservas-bienvenida {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 27px;
+    margin-bottom: 22px;
+    border: 1px solid #d9e5fa;
+    border-radius: 14px;
+    background: linear-gradient(115deg, #e8f0ff, #ffffff);
 }
 
-#tablaReservas td:nth-child(5) {
-    font-weight: 600;
+.pagina-modulo .reservas-etiqueta {
+    color: #3568bd;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
-#mensaje {
+.pagina-modulo .reservas-bienvenida h2 {
+    margin: 10px 0 8px;
+    color: #172957;
+    font-size: 23px;
+}
+
+.pagina-modulo .reservas-bienvenida p {
+    max-width: 600px;
+    margin: 0;
+    color: #71809a;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.pagina-modulo .reservas-icono {
+    display: grid;
+    place-items: center;
+    width: 62px;
+    height: 62px;
+    flex-shrink: 0;
+    border-radius: 17px;
+    color: #2f6de0;
+    background: #fff;
+    border: 1px solid #d9e5fa;
+    font-size: 34px;
+}
+
+/* Paneles del módulo */
+
+.pagina-modulo .modulo-panel {
+    padding: 24px;
+    margin-bottom: 22px;
+    background: #fff;
+    border: 1px solid #e1e8f2;
+    border-radius: 13px;
+    box-shadow: 0 3px 12px rgb(30 55 90 / 3%);
+}
+
+.pagina-modulo .modulo-panel-header {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #edf1f7;
+}
+
+.pagina-modulo .modulo-panel-icono {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: #eaf1ff;
+    color: #2865dc;
+    font-size: 25px;
+}
+
+.pagina-modulo .modulo-panel-header h2,
+.pagina-modulo .listado-header h2 {
+    margin: 0;
+    color: #1b2c4e;
+    font-size: 17px;
+}
+
+.pagina-modulo .modulo-panel-header p,
+.pagina-modulo .listado-header p {
+    margin: 6px 0 0;
+    color: #8190a5;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+/* Formulario */
+
+.pagina-modulo #formReserva {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 19px 22px;
+    max-width: none;
+    margin: 0;
+}
+
+.pagina-modulo .campo-reserva {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pagina-modulo .campo-reserva label {
+    color: #34445f;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pagina-modulo .campo-reserva input,
+.pagina-modulo .campo-reserva select {
+    min-height: 43px;
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #dce4f0;
+    border-radius: 8px;
+    background: #fbfcff;
+    color: #243653;
+    font-size: 13px;
+    transition: border-color .2s, box-shadow .2s;
+}
+
+.pagina-modulo .campo-reserva input:focus,
+.pagina-modulo .campo-reserva select:focus {
+    outline: none;
+    border-color: #5386eb;
+    box-shadow: 0 0 0 3px rgb(53 111 224 / 12%);
+    background: #fff;
+}
+
+.pagina-modulo .campo-reserva small {
+    color: #8a97aa;
+    font-size: 10px;
+    line-height: 1.5;
+}
+
+.pagina-modulo .form-reserva-acciones {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding-top: 3px;
+}
+
+.pagina-modulo .form-reserva-acciones button,
+.pagina-modulo .listado-header button {
+    min-height: 39px;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-size: 12px;
+}
+
+.pagina-modulo .form-reserva-acciones button:focus-visible,
+.pagina-modulo .listado-header button:focus-visible,
+.pagina-modulo .tabla-reservas button:focus-visible {
+    outline: 3px solid #b7d0ff;
+    outline-offset: 2px;
+}
+
+.pagina-modulo #btnCancelarEdicion {
+    background: #edf1f7;
+    color: #465873;
+}
+
+.pagina-modulo #btnCancelarEdicion:hover {
+    background: #dfe6f0;
+}
+
+.pagina-modulo #mensaje {
+    grid-column: 1 / -1;
+    margin: 0;
     overflow-wrap: anywhere;
+    line-height: 1.5;
+    font-size: 12px;
 }
 
-@media (max-width: 650px) {
-    #formReserva {
-        max-width: 100%;
+.pagina-modulo #mensaje:empty {
+    display: none;
+}
+
+/* Listado */
+
+.pagina-modulo .listado-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.pagina-modulo .listado-header .secundario {
+    background: #edf3ff;
+    color: #285ab5;
+}
+
+.pagina-modulo .listado-header .secundario:hover {
+    background: #dce8ff;
+}
+
+.pagina-modulo .tabla-reservas-contenedor {
+    width: 100%;
+    overflow-x: auto;
+    border: 1px solid #e6ebf3;
+    border-radius: 9px;
+}
+
+.pagina-modulo .tabla-reservas {
+    width: 100%;
+    min-width: 760px;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.pagina-modulo .tabla-reservas th {
+    padding: 14px 13px;
+    background: #f5f8fd;
+    color: #65748c;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .3px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.pagina-modulo .tabla-reservas td {
+    padding: 13px;
+    border-bottom: 1px solid #edf1f7;
+    color: #40516b;
+    vertical-align: middle;
+}
+
+.pagina-modulo .tabla-reservas tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.pagina-modulo .tabla-reservas tbody tr:hover {
+    background: #f8faff;
+}
+
+.pagina-modulo .tabla-reservas th:first-child,
+.pagina-modulo .tabla-reservas td:first-child {
+    width: 55px;
+    color: #7c8ca4;
+}
+
+.pagina-modulo .tabla-reservas td:nth-child(5) {
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.pagina-modulo .tabla-reservas td[colspan] {
+    padding: 25px;
+    color: #8190a5;
+    text-align: center;
+}
+
+/* Acciones de cada reserva */
+
+.pagina-modulo .tabla-reservas .acciones {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pagina-modulo .tabla-reservas .acciones button {
+    padding: 7px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.pagina-modulo .tabla-reservas .acciones button:first-child {
+    background: #eaf1ff;
+    color: #285ab5;
+}
+
+.pagina-modulo .tabla-reservas .acciones button:first-child:hover {
+    background: #d8e5ff;
+}
+
+.pagina-modulo .tabla-reservas .acciones .eliminar {
+    background: #fff0f0;
+    color: #c33737;
+}
+
+.pagina-modulo .tabla-reservas .acciones .eliminar:hover {
+    background: #ffdddd;
+}
+
+.pagina-modulo .nota-tabla {
+    margin: 13px 0 0;
+    color: #8a97aa;
+    font-size: 10px;
+}
+
+/* Adaptación a pantallas medianas */
+
+@media (max-width: 1000px) {
+    .pagina-modulo .dashboard-contenido {
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
-    #tablaReservas {
-        min-width: 700px;
+    .pagina-modulo .modulo-panel {
+        padding: 20px;
+    }
+}
+
+/* Adaptación a móviles */
+
+@media (max-width: 700px) {
+    .pagina-modulo .dashboard-header {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    .pagina-modulo .boton-volver {
+        margin-bottom: 16px;
+    }
+
+    .pagina-modulo #formReserva {
+        grid-template-columns: 1fr;
+        gap: 17px;
+    }
+
+    .pagina-modulo .form-reserva-acciones,
+    .pagina-modulo #mensaje {
+        grid-column: 1;
+    }
+
+    .pagina-modulo .modulo-panel {
+        padding: 17px;
+    }
+
+    .pagina-modulo .reservas-bienvenida {
+        padding: 20px 17px;
+    }
+
+    .pagina-modulo .reservas-bienvenida h2 {
+        font-size: 20px;
+    }
+
+    .pagina-modulo .reservas-icono {
+        width: 45px;
+        height: 45px;
+        font-size: 25px;
+        border-radius: 12px;
+    }
+
+    .pagina-modulo .listado-header {
+        align-items: flex-start;
     }
 }

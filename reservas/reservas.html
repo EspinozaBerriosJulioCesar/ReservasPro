@@ -3,79 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ReservasPro | Reservas</title>
+    <meta name="theme-color" content="#172957">
+    <title>INNOVASUN | Reservas</title>
+
     <link rel="stylesheet" href="../CSS/global.css">
     <link rel="stylesheet" href="../CSS/reservas.css">
     <script src="reservas.js" defer></script>
 </head>
-<body>
-    <header class="encabezado">
-        <div>
-            <h1>Gestión de reservas</h1>
-            <p>Administración de citas y servicios</p>
+
+<body class="pagina-dashboard pagina-modulo">
+
+<div class="dashboard-layout">
+
+    
+    <aside class="menu-lateral">
+        <a class="marca" href="../frontend/index.html">
+            <div class="marca-logo" aria-hidden="true">I</div>
+            <div class="marca-texto">
+                <strong>INNOVASUN</strong>
+                <span>HOTEL & RESORT</span>
+            </div>
+        </a>
+
+        <div class="menu-etiqueta">MENÚ PRINCIPAL</div>
+
+        <nav class="navegacion" aria-label="Menú principal">
+            <a class="nav-enlace" href="../frontend/index.html">
+                <span class="nav-icono">⌂</span>
+                Panel principal
+            </a>
+
+            <a class="nav-enlace activo" href="reservas.html">
+                <span class="nav-icono">▦</span>
+                Reservas
+            </a>
+
+            <a class="nav-enlace" href="../clientes/clientes.html">
+                <span class="nav-icono">♙</span>
+                Clientes
+            </a>
+
+            <a class="nav-enlace" href="../servicios/servicios.html">
+                <span class="nav-icono">✧</span>
+                Servicios
+            </a>
+        </nav>
+
+        <div class="menu-separador"></div>
+        <div class="menu-etiqueta">FUTURAS MEJORAS</div>
+
+        <nav class="navegacion" aria-label="Futuras funcionalidades">
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▤</span>
+                Reportes
+            </span>
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">♧</span>
+                Recordatorios
+            </span>
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">▣</span>
+                Pagos en línea
+            </span>
+            <span class="nav-enlace nav-pendiente">
+                <span class="nav-icono">◷</span>
+                Historial de clientes
+            </span>
+        </nav>
+
+        <div class="menu-pie">
+            <div class="indicador-conexion"></div>
+            <div>
+                <strong>Gestión centralizada</strong>
+                <span>INNOVASUN · Versión inicial</span>
+            </div>
         </div>
-        <a class="boton" href="../frontend/index.html">Volver al inicio</a>
-    </header>
+    </aside>
 
-    <main class="contenedor">
-        <section class="panel">
-            <h2 id="tituloFormulario">Registrar una reserva</h2>
+    
+    <main class="dashboard-contenido">
 
-            <form id="formReserva">
-                <label for="clienteId">Cliente</label>
-                <select id="clienteId" required>
-                    <option value="">Selecciona un cliente</option>
-                </select>
+        <header class="dashboard-header">
+            <div>
+                <p class="texto-superior">INNOVASUN / GESTIÓN</p>
+                <h1>Gestión de reservas</h1>
+                <p class="subtitulo-header">
+                    Administra las reservas, clientes, servicios y horarios.
+                </p>
+            </div>
 
-                <label for="servicioId">Servicio</label>
-                <select id="servicioId" required>
-                    <option value="">Selecciona un servicio</option>
-                </select>
+            <a class="boton boton-volver" href="../frontend/index.html">
+                ← Volver al panel
+            </a>
+        </header>
 
-                <label for="fechaReserva">Fecha y hora</label>
-                <input type="datetime-local" id="fechaReserva" required>
+        <!-- Introducción -->
+        <section class="reservas-bienvenida">
+            <div>
+                <span class="reservas-etiqueta">MÓDULO DE RESERVAS</span>
+                <h2>Organiza tus reservas</h2>
+                <p>
+                    Registra nuevas reservas, consulta los datos existentes
+                    y mantén actualizada su información.
+                </p>
+            </div>
+            <div class="reservas-icono" aria-hidden="true">▦</div>
+        </section>
 
-                <label for="estado">Estado</label>
-                <select id="estado" required>
-                    <option value="PENDIENTE">Pendiente</option>
-                    <option value="CONFIRMADA">Confirmada</option>
-                    <option value="CANCELADA">Cancelada</option>
-                </select>
+        
+        <section class="modulo-panel">
+            <div class="modulo-panel-header">
+                <div class="modulo-panel-icono">＋</div>
+                <div>
+                    <h2 id="tituloFormulario">Registrar una reserva</h2>
+                    <p>Completa la información para registrar la reserva.</p>
+                </div>
+            </div>
 
-                <button type="submit" id="btnGuardar">Registrar reserva</button>
-                <button type="button" id="btnCancelarEdicion" class="secundario" hidden>
-                    Cancelar edición
-                </button>
-                <p id="mensaje" class="mensaje" role="status"></p>
+            <form id="formReserva" class="form-reserva">
+
+                <div class="campo-reserva">
+                    <label for="clienteId">Cliente</label>
+                    <select id="clienteId" required>
+                        <option value="">Selecciona un cliente</option>
+                    </select>
+                    <small>Selecciona el cliente que solicita la reserva.</small>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="servicioId">Servicio</label>
+                    <select id="servicioId" required>
+                        <option value="">Selecciona un servicio</option>
+                    </select>
+                    <small>Selecciona el servicio que se reservará.</small>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="fechaReserva">Fecha y hora</label>
+                    <input type="datetime-local" id="fechaReserva" required>
+                    <small>Indica cuándo se realizará el servicio.</small>
+                </div>
+
+                <div class="campo-reserva">
+                    <label for="estado">Estado de la reserva</label>
+                    <select id="estado" required>
+                        <option value="PENDIENTE">Pendiente</option>
+                        <option value="CONFIRMADA">Confirmada</option>
+                        <option value="CANCELADA">Cancelada</option>
+                    </select>
+                    <small>Selecciona el estado actual de la reserva.</small>
+                </div>
+
+                <div class="form-reserva-acciones">
+                    <button type="submit" id="btnGuardar">
+                        Registrar reserva
+                    </button>
+
+                    <button type="button" id="btnCancelarEdicion"
+                            class="secundario" hidden>
+                        Cancelar edición
+                    </button>
+                </div>
+
+                <p id="mensaje" class="mensaje" role="status"
+                   aria-live="polite"></p>
             </form>
         </section>
 
-        <section class="panel">
-            <div class="barra-titulo">
-                <h2>Reservas registradas</h2>
+        
+        <section class="modulo-panel">
+            <div class="listado-header">
+                <div>
+                    <h2>Reservas registradas</h2>
+                    <p>Consulta y administra las reservas del sistema.</p>
+                </div>
+
                 <button type="button" id="btnActualizar" class="secundario">
-                    Actualizar
+                    ↻ Actualizar
                 </button>
             </div>
 
-            <div class="tabla-contenedor">
-                <table>
+            <div class="tabla-contenedor tabla-reservas-contenedor">
+                <table class="tabla-reservas">
                     <thead>
                         <tr>
                             <th>ID</th>
                             <th>Cliente</th>
                             <th>Servicio</th>
-                            <th>Fecha</th>
+                            <th>Fecha y hora</th>
                             <th>Estado</th>
                             <th>Acciones</th>
                         </tr>
                     </thead>
+
                     <tbody id="tablaReservas">
-                        <tr><td colspan="6">Cargando reservas...</td></tr>
+                        <tr>
+                            <td colspan="6">Cargando reservas...</td>
+                        </tr>
                     </tbody>
                 </table>
             </div>
+
+            <p class="nota-tabla">
+                Utiliza las acciones de cada registro para editarlo o eliminarlo.
+            </p>
         </section>
+
+        <footer class="dashboard-footer">
+            <span>INNOVASUN · Gestión de reservas</span>
+            <span>Sistema de gestión · Primera versión</span>
+        </footer>
+
     </main>
+</div>
+
 </body>
 </html>
