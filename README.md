@@ -25,3 +25,14 @@ Proyecto en etapa de planificación y preparación del desarrollo.
 
 ## Versión
 Versión prevista: 1.0.0.
+
+
+## Ejecución en GitHub Codespaces
+Para probar el proyecto localmente en Codespaces:
+1. Iniciar base de datos: `docker run --name mysql-reservas -e MYSQL_ROOT_PASSWORD=root -e MYSQL_DATABASE=reservaspro -p 3306:3306 -d mysql:8.0`
+2. Exportar credenciales:
+   `export DB_URL="jdbc:mysql://localhost:3306/reservaspro?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true"`
+   `export DB_USERNAME="root"`
+   `export DB_PASSWORD="root"`
+3. Ejecutar backend: `./mvnw spring-boot:run`
+4. Abrir `frontend/index.html` con Live Server.
